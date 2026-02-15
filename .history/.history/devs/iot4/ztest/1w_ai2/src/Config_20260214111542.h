@@ -14,7 +14,10 @@
 #define MSG_TIME_PAYLOAD "in mq.reconn->devid/time, <-/prg&/devtime"
 
 // GADGET CONFIGURATION
+
 /// ----temp1w_se gadget configuration ----
+# define READ_INTERVAL 2000
+
 //----data structures for config and state
 struct T1w_Config {
   uint8_t   gpio;

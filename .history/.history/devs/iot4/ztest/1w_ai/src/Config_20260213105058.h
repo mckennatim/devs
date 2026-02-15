@@ -21,7 +21,7 @@ struct T1w_Config {
   uint8_t   sa;        // sensor/actuator id
   float     threshold;
   const char* name;    
-  const char* val_of; // temp(F), current(A), setpt, relay 
+  const char* type; // temp(F), current(A), setpt, relay 
   bool      rec;
   const char* pwd; // available to everybody, available by pwd
 };
@@ -38,7 +38,6 @@ inline const T1w_Config t1w_config[2] = {
   {4, 0, 0.5, "Outside", "temp(F)", true, ""},
   {4, 1, 0.5, "Ari_room", "temp(F)", true, "duck"}
 };
-
 
 //-----(initial) state ------
 //{sa, lastValue}

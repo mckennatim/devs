@@ -14,7 +14,13 @@
 #define MSG_TIME_PAYLOAD "in mq.reconn->devid/time, <-/prg&/devtime"
 
 // GADGET CONFIGURATION
+#define SA_COUNT 2
 /// ----temp1w_se gadget configuration ----
+#define TW1_READ_INTERVAL 2000
+#define TW1_COUNT 2
+
+
+
 //----data structures for config and state
 struct T1w_Config {
   uint8_t   gpio;
@@ -34,7 +40,7 @@ struct T1w_State {
 //----config ------
 //{gpio, sa, threshold, name, rec, pwd }
 // Using inline to allow definition in header (C++17)
-inline const T1w_Config t1w_config[2] = {
+inline const T1w_Config t1w_config[TW1_COUNT] = {
   {4, 0, 0.5, "Outside", "temp(F)", true, ""},
   {4, 1, 0.5, "Ari_room", "temp(F)", true, "duck"}
 };
@@ -43,7 +49,7 @@ inline const T1w_Config t1w_config[2] = {
 //-----(initial) state ------
 //{sa, lastValue}
 // Using inline to allow definition in header (C++17)
-inline T1w_State t1w_state[2] = {
+inline T1w_State t1w_state[TW1_COUNT] = {
   {0,  0.0 },
   {1,  0.0 }
 };

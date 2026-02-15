@@ -21,13 +21,14 @@ struct T1w_Config {
   uint8_t   sa;        // sensor/actuator id
   float     threshold;
   const char* name;    
-  const char* val_of; // temp(F), current(A), setpt, relay 
+  const char* type; // temp(F), current(A), setpt, relay 
   bool      rec;
   const char* pwd; // available to everybody, available by pwd
 };
 
 struct T1w_State {     
   uint8_t sa;
+  const char* name;
   float lastValue;
 };
 
@@ -39,12 +40,11 @@ inline const T1w_Config t1w_config[2] = {
   {4, 1, 0.5, "Ari_room", "temp(F)", true, "duck"}
 };
 
-
 //-----(initial) state ------
-//{sa, lastValue}
+//{sa, name, lastValue}
 // Using inline to allow definition in header (C++17)
 inline T1w_State t1w_state[2] = {
-  {0,  0.0 },
-  {1,  0.0 }
+  {0, "temp_out", 0.0 },
+  {1, "temp_ari", 0.0 }
 };
 

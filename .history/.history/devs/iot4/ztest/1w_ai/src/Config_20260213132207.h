@@ -39,7 +39,6 @@ inline const T1w_Config t1w_config[2] = {
   {4, 1, 0.5, "Ari_room", "temp(F)", true, "duck"}
 };
 
-
 //-----(initial) state ------
 //{sa, lastValue}
 // Using inline to allow definition in header (C++17)
